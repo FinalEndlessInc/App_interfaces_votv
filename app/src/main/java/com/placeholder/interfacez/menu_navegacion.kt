@@ -9,7 +9,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.placeholder.interfacez.ui.pantallas.PantallaDetector
-import com.placeholder.interfacez.ui.pantallas.pantallaPrincipal
+import com.placeholder.interfacez.ui.pantallas.pantallaData
+import com.placeholder.interfacez.ui.pantallas.pantallaFiltro
 
 public enum class Pantallas{
     pantalla_1,
@@ -24,12 +25,12 @@ fun PantallaNavegacion(modificador: Modifier = Modifier){
     }
 
     when(mostrar_pantalla){
-        //pantallaPrincipal(modificador)
-        Pantallas.pantalla_1 -> pantallaPrincipal(modificador)
-        Pantallas.pantalla_2 -> PantallaDetector(modificador)
-        Pantallas.pantalla_3 -> TODO()
+        Pantallas.pantalla_1 -> PantallaDetector(modificador)
+        Pantallas.pantalla_2 -> pantallaFiltro(modificador)
+        Pantallas.pantalla_3 -> pantallaData(modificador)
     }
 
+    //Profe no supe moverle al boton, y ya me cansé 🥀
     Button(onClick = {
         when(mostrar_pantalla){
 
